@@ -1,18 +1,18 @@
-# 📊 ConnectaTel - Análisis de Clientes y Patrones de Consumo
+# 📊 ConnectaTel - Customer Analysis and Usage Patterns
 
-## 📌 Objetivo del Proyecto
+## 📌 Project Objective
 
-El objetivo de este proyecto es analizar el comportamiento de los clientes de ConnectaTel, una empresa de telecomunicaciones en Latinoamérica, utilizando información de usuarios y consumo registrada durante 2024.
+The objective of this project is to analyze the behavior of ConnectaTel customers, a telecommunications company operating in Latin America, using customer and service usage data recorded during 2024.
 
-A través de técnicas de limpieza, exploración y análisis de datos, se busca identificar patrones de uso, segmentos de clientes y oportunidades de negocio que permitan optimizar la oferta de planes y mejorar la toma de decisiones.
+Through data cleaning, exploration, and analysis techniques, the project aims to identify usage patterns, customer segments, and business opportunities that can help optimize service plan offerings and improve decision-making.
 
 ---
 
-## 📂 Datasets Utilizados
+## 📂 Datasets Used
 
 ### users_latam.csv
 
-Contiene información demográfica de los clientes:
+Contains customer demographic information:
 
 * user_id
 * age
@@ -22,122 +22,120 @@ Contiene información demográfica de los clientes:
 
 ### usage.csv
 
-Contiene los registros de uso de los servicios:
+Contains service usage records:
 
 * id
 * user_id
-* type (call o text)
+* type (call or text)
 * duration
 * event_date
 
 ### plans.csv
 
-Contiene la información de los planes ofrecidos por ConnectaTel.
-* plan_name	
-* messages_included	
-* gb_per_month	
-* minutes_included	
-* usd_monthly_pay	
-* usd_per_gb	
-* usd_per_message	
+Contains information about the service plans offered by ConnectaTel:
+
+* plan_name
+* messages_included
+* gb_per_month
+* minutes_included
+* usd_monthly_pay
+* usd_per_gb
+* usd_per_message
 * usd_per_minute
 
 ---
 
-## 🔎 Etapas del Análisis
+## 🔎 Analysis Stages
 
-### 1. Exploración de Datos (EDA)
+### 1. Exploratory Data Analysis (EDA)
 
-* Revisión de estructura de los datasets.
-* Validación de tipos de datos.
-* Identificación de valores nulos.
-* Análisis descriptivo inicial.
+* Review of dataset structure.
+* Validation of data types.
+* Identification of missing values.
+* Initial descriptive analysis.
 
-### 2. Limpieza de Datos
+### 2. Data Cleaning
 
-* Corrección de valores inválidos y sentinels.
-* Tratamiento de valores ausentes.
-* Estandarización de nombres de ciudades.
-* Conversión de fechas al formato adecuado.
-* Validación de rangos de edad.
+* Correction of invalid values and sentinel values.
+* Treatment of missing values.
+* Standardization of city names.
+* Conversion of dates to the appropriate format.
+* Validation of customer age ranges.
 
-### 3. Integración de Datos
+### 3. Data Integration
 
-* Consolidación de la información de usuarios y consumo.
-* Creación del dataset analítico `user_profile`.
+* Consolidation of customer and usage information.
+* Creation of the analytical dataset `user_profile`.
 
-### 4. Análisis de Consumo
+### 4. Usage Analysis
 
-* Cálculo de mensajes enviados por usuario.
-* Cálculo de llamadas realizadas por usuario.
-* Cálculo de minutos totales consumidos.
-* Generación de histogramas y estadísticas descriptivas.
+* Calculation of messages sent per user.
+* Calculation of calls made per user.
+* Calculation of total minutes used.
+* Generation of histograms and descriptive statistics.
 
-### 5. Detección de Outliers
+### 5. Outlier Detection
 
-* Construcción de boxplots.
-* Identificación de valores atípicos mediante IQR.
-* Evaluación del impacto de usuarios de alto consumo.
+* Creation of boxplots.
+* Identification of outliers using the IQR method.
+* Evaluation of the impact of high-usage customers.
 
-### 6. Segmentación de Clientes
+### 6. Customer Segmentation
 
-* Segmentación por grupos de edad:
+* Segmentation by age group:
+  * Young
+  * Adult
+  * Senior
 
-  * Joven
-  * Adulto
-  * Adulto Mayor
+* Segmentation by usage level:
+  * Low Usage
+  * Medium Usage
+  * High Usage
 
-* Segmentación por nivel de uso:
+### 7. Executive Analysis
 
-  * Bajo Uso
-  * Uso Medio
-  * Alto Uso
-
-### 7. Análisis Ejecutivo
-
-* Identificación de clientes de alto valor.
-* Detección de patrones de consumo.
-* Generación de recomendaciones para nuevos planes y estrategias comerciales.
+* Identification of high-value customers.
+* Detection of usage patterns.
+* Development of recommendations for new service plans and commercial strategies.
 
 ---
 
-## 🚀 Cómo Ejecutar el Proyecto
+## 🚀 How to Run the Project
 
-### Opción 1: Google Colab
+### Option 1: Google Colab
 
-1. Descarga el archivo `.ipynb`.
-2. Ingresa a Google Colab:
-   https://colab.research.google.com
-3. Selecciona **Archivo → Subir Notebook**.
-4. Carga el notebook del proyecto.
-5. Sube los archivos CSV requeridos.
-6. Ejecuta las celdas en orden.
+1. Download the `.ipynb` file.
+2. Open Google Colab.
+3. Select **File → Upload Notebook**.
+4. Upload the project notebook.
+5. Upload the required CSV files.
+6. Run the cells in order.
 
-### Opción 2: Jupyter Notebook
+### Option 2: Jupyter Notebook
 
 ```bash
 pip install pandas numpy matplotlib seaborn
 jupyter notebook
 ```
 
-Abre el notebook y ejecuta todas las celdas secuencialmente.
+Open the notebook and run all cells sequentially.
 
 ---
 
-## 📋 Guía de Reproducción
+## 📋 Reproduction Guide
 
-1. Cargar los datasets.
-2. Explorar la calidad de los datos.
-3. Corregir valores nulos e inconsistencias.
-4. Crear variables agregadas de consumo por usuario.
-5. Generar histogramas y boxplots.
-6. Identificar outliers mediante IQR.
-7. Crear segmentos por edad y nivel de uso.
-8. Analizar los resultados y elaborar recomendaciones de negocio.
+1. Load the datasets.
+2. Explore data quality.
+3. Correct missing values and inconsistencies.
+4. Create aggregated usage variables for each user.
+5. Generate histograms and boxplots.
+6. Identify outliers using the IQR method.
+7. Create customer segments based on age and usage level.
+8. Analyze the results and develop business recommendations.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Technologies Used
 
 * Python
 * Pandas
@@ -148,9 +146,9 @@ Abre el notebook y ejecuta todas las celdas secuencialmente.
 
 ---
 
-## 🎯 Principales Hallazgos
+## 🎯 Key Findings
 
-* La mayoría de los clientes pertenece al segmento de uso medio.
-* Se detectaron usuarios con consumos significativamente superiores al promedio.
-* Los clientes de alto uso representan una oportunidad para planes premium y estrategias de fidelización.
-* La segmentación por edad y uso permite identificar oportunidades para ofertas más personalizadas.
+* Most customers belong to the medium-usage segment.
+* Customers with usage levels significantly above the average were identified.
+* High-usage customers represent an opportunity for premium plans and customer retention strategies.
+* Segmentation by age and usage level helps identify opportunities for more personalized service offerings.
